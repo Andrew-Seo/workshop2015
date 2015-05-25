@@ -1,0 +1,36 @@
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+public class ARandomThing
+{
+	public static void main(String[] args)
+	{
+
+		String Question = JOptionPane.showInputDialog("Guess a number between negative 1 million and 1 million");
+		int userInput = Integer.parseInt(Question);
+		int computerInput = new Random().nextInt(100) + 1;
+
+		for (int i = 0; i < 7; i++)
+		{
+
+			if (computerInput == userInput)
+			{
+				String correct = JOptionPane.showMessageDialog("Sat is correct");
+				userInput = Integer.parseInt(correct);
+			}
+			if (computerInput < userInput)
+			{
+				String lower = JOptionPane.showInputDialog("lower");
+				userInput = Integer.parseInt(lower);
+			}
+			if (computerInput > userInput)
+			{
+				String higher = JOptionPane.showInputDialog("higher");
+
+				userInput = Integer.parseInt(higher);
+			}
+
+		}
+	}
+}

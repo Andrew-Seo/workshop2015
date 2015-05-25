@@ -1,0 +1,8 @@
+
+public class ARandomThing
+{
+public static void main(String[] args)
+{
+	int x = new Random().nextInt();
+}
+}
