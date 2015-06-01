@@ -7,7 +7,7 @@ public class HiLowGame
 	public static void main(String[] args)
 	{
 
-		String Question = JOptionPane.showInputDialog("Guess a number between 1 and 1 billion");
+		String Question = JOptionPane.showInputDialog("Guess a number between negative 1 million and 1 million");
 		int userInput = Integer.parseInt(Question);
 		int computerInput = new Random().nextInt(1000000000);
 
