@@ -1,0 +1,42 @@
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+public class Blackjack
+
+{
+	public static void main(String[] args)
+{
+	int card = new Random().nextInt(10);
+	int hit = new Random().nextInt(10);
+	JOptionPane.showMessageDialog(null, "YOU got" + card);
+	int hat = JOptionPane.showConfirmDialog(null, "Do you want a HIT?", "",JOptionPane.YES_NO_OPTION);
+	if (JOptionPane.YES_OPTION == hat)
+	{
+		int ht = new Random().nextInt(10);
+		JOptionPane.showConfirmDialog(null, "Do you want a HIT AGAIN?", "",JOptionPane.YES_NO_OPTION);
+		
+		if (JOptionPane.YES_OPTION == hat)
+		{
+			int t = new Random().nextInt(10);
+		}
+		else if (JOptionPane.NO_OPTION == hat)
+		{
+			String stand = JOptionPane.showInputDialog(null, "In the end, YOU got" +  card );
+		}
+	}
+	else if (JOptionPane.NO_OPTION == hat){
+		String stand = JOptionPane.showInputDialog(null, "In the end, YOU got" +  card );
+	}
+
+	else if (card>21)
+	{
+		JOptionPane.showMessageDialog(null, "BUST!!!");
+	}
+	
+	else if (card<= 21)
+	{
+		JOptionPane.showMessageDialog(null, "OK!!!");
+	}
+}
+}
