@@ -8,7 +8,7 @@ public class Blackjack
 	{
 		JOptionPane
 				.showMessageDialog(null,
-						"The object of this game is to get the number 21. Anything over 21, is a bust. Anything below is acceptable, but the goal is 21.");
+						"The object of this game is to get the number 21. Anything over 21, is a bust. Anthing below is acceptable, but the goal is 21.");
 		int card = new Random().nextInt(20) + 1;
 		int hit = new Random().nextInt(10);
 		JOptionPane.showMessageDialog(null, "YOU got " + card);
