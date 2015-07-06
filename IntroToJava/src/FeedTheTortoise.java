@@ -1,0 +1,128 @@
+/****** MUST BE USED WITH JAVA 1.6 *****/
+
+import java.awt.Component;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
+import java.awt.Label;
+import java.awt.event.KeyEvent;
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+import org.teachingextensions.logo.Tortoise;
+import org.teachingextensions.logo.TurtlePanel;
+
+public class FeedTheTortoise implements KeyEventDispatcher
+{
+
+	private void feedTheTortoise()
+	{
+		// 1. use the addFood() method to add food for the tortoise
+		int X = new Random().nextInt(401)+ 50;
+		int Y = new Random().nextInt(401)+ 50;
+		addFood(X,Y);
+		JOptionPane.showMessageDialog(null, X + " " + Y);
+	}
+
+private void goUp()
+	{
+		// 2. Print “going up”. Test it out by running your code and pressing the up key
+		System.out.println("Going UP");
+		// 3. Make the tortoise move up the screen
+		Tortoise.move(5);
+	}
+
+	private void goDown()
+	{
+		// 4. make the tortoise move down the screen
+		Tortoise.move(-5);
+	}
+	
+	private void goLeft()
+	{
+		// 5. make the tortoise move left
+		Tortoise.turn(-90);
+		Tortoise.move(5);
+	}
+
+	private void goRight()
+	{
+		// 6. make the tortoise move right
+		Tortoise.turn(90);
+		Tortoise.move(5);
+	}
+
+	private void checkIfFoodFound() throws Exception
+	{
+		int tortoiseLocationX = Tortoise.getX();
+		int tortoiseLocationY = Tortoise.getY();
+		
+		// 7. Print out the variables for tortoiseLocationX and tortoiseLocationY
+		System.out.println(tortoiseLocationX +" "+tortoiseLocationY);
+		// 8. if tortoise is at same location as food
+		if(Tortoise.getX() == 55 && Tortoise.getY() == 80){
+		// print "chomp"
+		System.out.println("chomp");
+		Runtime.getRuntime().exec("say chomp");
+		
+		eatFood();
+		JOptionPane.showMessageDialog(null, "YOU DID IT!!!");
+		speak("YOU DID IT!!!");
+		System.exit(0);}
+		
+		}
+	
+
+private void eatFood() {
+		component.setText("");
+	}
+
+	private void addFood(int x, int y)
+	{
+		component.setLocation(x, y);
+		window.add(component);
+	}
+
+	TurtlePanel window = Tortoise.getBackgroundWindow();
+Label component = new Label("*");
+
+	public static void main(String[] args)
+	{
+		FeedTheTortoise feeder = new FeedTheTortoise();
+		feeder.controlTheTortoise();
+		feeder.feedTheTortoise();
+	}
+
+	private void controlTheTortoise() 
+{
+KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(this);
+		Tortoise.show();
+		Tortoise.setSpeed(10);
+	}
+	static void speak(String words) {
+		try {
+			Runtime.getRuntime().exec("say " + words).waitFor();
+		} catch (Exception e) {
+			e.printStackTrace(); }}
+
+	public boolean dispatchKeyEvent(KeyEvent e)
+	{
+		if (e.getID() == KeyEvent.KEY_PRESSED)
+		{
+			if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+				goRight();
+			if (e.getKeyCode() == KeyEvent.VK_LEFT)
+				goLeft();
+			if (e.getKeyCode() == KeyEvent.VK_UP)
+				goUp();
+			if (e.getKeyCode() == KeyEvent.VK_DOWN)
+				 goDown();
+			try {
+			checkIfFoodFound();
+			} catch (Exception exception) {}
+		}
+		return false;
+	}
+
+}
+
