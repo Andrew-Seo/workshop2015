@@ -14,12 +14,17 @@ import org.teachingextensions.logo.TurtlePanel;
 
 public class FeedTheTortoise implements KeyEventDispatcher
 {
-
+	public int xr = 0;
+	public int yr = 0;
 	private void feedTheTortoise()
 	{
 		// 1. use the addFood() method to add food for the tortoise
 		int X = new Random().nextInt(401)+ 50;
 		int Y = new Random().nextInt(401)+ 50;
+		X = X*5;
+		Y= Y*5;
+		xr = X;
+		yr = Y;
 		addFood(X,Y);
 		JOptionPane.showMessageDialog(null, X + " " + Y);
 	}
@@ -54,17 +59,20 @@ private void goUp()
 
 	private void checkIfFoodFound() throws Exception
 	{
+		
+		//prints out
+		System.out.println("COORDS" + xr + " : " + yr);
+		
 		int tortoiseLocationX = Tortoise.getX();
 		int tortoiseLocationY = Tortoise.getY();
 		
 		// 7. Print out the variables for tortoiseLocationX and tortoiseLocationY
 		System.out.println(tortoiseLocationX +" "+tortoiseLocationY);
 		// 8. if tortoise is at same location as food
-		if(Tortoise.getX() == 55 && Tortoise.getY() == 80){
+		if(Tortoise.getX() == xr && Tortoise.getY() == yr){
 		// print "chomp"
 		System.out.println("chomp");
 		Runtime.getRuntime().exec("say chomp");
-		
 		eatFood();
 		JOptionPane.showMessageDialog(null, "YOU DID IT!!!");
 		speak("YOU DID IT!!!");
