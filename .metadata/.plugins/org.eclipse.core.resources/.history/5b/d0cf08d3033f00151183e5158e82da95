@@ -63,7 +63,7 @@ public class DrumKit extends MouseAdapter
 		JLabel drumClicked = (JLabel) e.getSource();
 
 		// 15. Download a drum sound and drop it into your "default package".
-
+		
 		// There are some sounds here: http://bit.ly/drum-sounds or you can also
 		// get them from freesound.org
 
