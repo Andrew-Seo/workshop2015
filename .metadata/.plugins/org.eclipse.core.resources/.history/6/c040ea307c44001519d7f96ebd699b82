@@ -1,0 +1,35 @@
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class JStuff
+{
+	JFrame k;
+	JPanel panel;
+	JLabel label;
+	Font TimesNewRoman;
+
+	public static void main(String[] args)
+	{
+		new JStuff();
+
+	}
+
+	JStuff()
+	{
+		k = new JFrame();
+		k.setVisible(true);
+		k.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel = new JPanel();
+		k.add(panel);
+		label = new JLabel("Text");
+		k.add(label);
+		TimesNewRoman = new Font("Times New Roman", Font.PLAIN, 12);
+		
+		
+		k.setSize(500, 500);
+
+	}
+}

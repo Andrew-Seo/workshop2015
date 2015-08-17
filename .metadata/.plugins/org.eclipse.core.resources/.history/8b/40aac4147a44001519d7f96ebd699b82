@@ -1,0 +1,21 @@
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class JStuff
+{
+	JFrame k;
+
+	public static void main(String[] args)
+	{
+		new JStuff();
+
+	}
+
+	JStuff()
+	{
+		k = new JFrame();
+		JLabel n = new JLabel();
+		k.setSize(500, 500);
+		k.setVisible(true);
+	}
+}

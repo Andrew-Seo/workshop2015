@@ -1,0 +1,30 @@
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class JStuff
+{
+	JFrame k;
+	JPanel panel;
+	JLabel label;
+
+	public static void main(String[] args)
+	{
+		new JStuff();
+
+	}
+
+	JStuff()
+	{
+		k = new JFrame();
+		k.pack();
+		k.setSize(500, 500);
+		k.setVisible(true);
+		k.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		k.add(panel);
+		panel = new JPanel();
+		k.add(label);
+		label = new JLabel("Text");
+
+	}
+}
