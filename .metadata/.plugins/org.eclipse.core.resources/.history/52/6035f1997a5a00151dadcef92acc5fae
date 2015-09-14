@@ -1,0 +1,12 @@
+import javax.swing.JOptionPane;
+
+
+public class stringFun
+{
+public static void main(String[] args)
+{
+	String name = JOptionPane.showInputDialog("What word do you want to Analyze?");
+
+	System.out.println(name.charAt(uu));
+}
+}
