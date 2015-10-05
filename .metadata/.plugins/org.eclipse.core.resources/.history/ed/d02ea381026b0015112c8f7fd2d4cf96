@@ -25,7 +25,6 @@ public class spamalot implements ActionListener
 	JButton Bad;
 	JButton Good;
 	JTextField PhoneNumber;
-	JTextField Email;
 
 	public static void main(String[] args)
 	{
@@ -34,6 +33,7 @@ public class spamalot implements ActionListener
 		// like this:
 		JFrame Window = new JFrame();
 		spamalot j = new spamalot();
+		j.sendSpam("andrew.seo.cvms@gmail.com", "I'm Sorry. I hate you. Face LIFE", "This is the truth: U Suck");
 
 		// 5. Add the sendSpam() method below to send nasty/nice messages
 		// depending on which button is clicked. (Command + Shift + O will add
@@ -51,34 +51,24 @@ public class spamalot implements ActionListener
 		panel.add(Bad);
 		JButton Good = new JButton("Good");
 		panel.add(Good);
-		JTextField PhoneNumber = new JTextField(20);
+		JTextField PhoneNumber = new JTextField();
 		panel.add(PhoneNumber);
-		JTextField Email = new JTextField(20);
-		panel.add(Email);
-		Good.addActionListener(this);
-		Bad.addActionListener(this);
 		Window.setSize(500, 500);
 		Window.pack();
 	}
+//	Color the text field (containing the email address) as green if the email sent, and red if the email failed to send.
+//	myJTextField.setBackground(Color.RED);
 
-	// 7. [Optional] Allow your program to also spam cell phones.
-
-	String sendTextMessage(String phoneNumber, String message)
-	{
-		if (sendSpam(phoneNumber + "@tmomail.net", "", message))
-			return "T-Mobile";
-		if (sendSpam(phoneNumber + "@vmobl.com", "", message))
-			return "Virgin Mobile";
-		if (sendSpam(phoneNumber + "@cingularme.com", "", message))
-			return "Cingular";
-		if (sendSpam(phoneNumber + "@messaging.sprintpcs.com", "", message))
-			return "Sprint";
-		if (sendSpam(phoneNumber + "@vtext.com", "", message))
-			return "Verizon";
-		if (sendSpam(phoneNumber + "@messaging.nextel.com", "", message))
-			return "Nextel";
-		return "FAIL!";
-	}
+//7. [Optional] Allow your program to also spam cell phones.
+//String sendTextMessage(String phoneNumber, String message){
+//	if(sendSpam(phoneNumber + "@tmomail.net", "", message)) return "T-Mobile"; 
+//	if(sendSpam(phoneNumber + "@vmobl.com", "", message)) return "Virgin Mobile"; 
+//	if(sendSpam(phoneNumber + "@cingularme.com", "", message)) return "Cingular"; 
+//	if(sendSpam(phoneNumber + "@messaging.sprintpcs.com", "", message)) return "Sprint"; 
+//	if(sendSpam(phoneNumber + "@vtext.com", "", message)) return "Verizon"; 
+//	if(sendSpam(phoneNumber + "@messaging.nextel.com", "", message)) return "Nextel"; 
+//	return "FAIL!";
+//}
 
 	private boolean sendSpam(String recipient, String subject, String content)
 	{
@@ -124,19 +114,11 @@ public class spamalot implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		// TODO Auto-generated method stub
-		if (e.getSource() == Bad)
-		{
-			Email.setBackground(Color.GREEN);
-			sendSpam(Email.getText(), "I'm Sorry. I hate you. Face LIFE", "This is the truth: U Suck");
-			// PhoneNumber.setBackground(Color.GREEN);
-			// sendTextMessage(PhoneNumber.getText(), "me");
+		if(e.getSource() == Bad){
+			PhoneNumber.setBackground(Color.GREEN);
 		}
-		if (e.getSource() == Good)
-		{
-			Email.setBackground(Color.GREEN);
-			sendSpam(Email.getText(), "I'm Sorry. I hate you. Face LIFE", "This is the truth: U Suck");
-			// PhoneNumber.setBackground(Color.GREEN);
-			// sendTextMessage(PhoneNumber.getText(), "me");
+		if(e.getSource() == Good){
+			PhoneNumber.setBackground(Color.GREEN);
 		}
 	}
 }

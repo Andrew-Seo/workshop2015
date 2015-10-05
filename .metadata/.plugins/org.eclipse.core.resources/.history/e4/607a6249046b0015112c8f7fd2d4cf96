@@ -26,6 +26,7 @@ public class spamalot implements ActionListener
 	JButton Good;
 	JTextField PhoneNumber;
 	JTextField Email;
+	
 
 	public static void main(String[] args)
 	{
@@ -127,16 +128,16 @@ public class spamalot implements ActionListener
 		if (e.getSource() == Bad)
 		{
 			Email.setBackground(Color.GREEN);
-			sendSpam(Email.getText(), "I'm Sorry. I hate you. Face LIFE", "This is the truth: U Suck");
-			// PhoneNumber.setBackground(Color.GREEN);
+			 sendSpam(Email.getText(),"I'm Sorry. I hate you. Face LIFE", "This is the truth: U Suck");
+			 //PhoneNumber.setBackground(Color.GREEN);
 			// sendTextMessage(PhoneNumber.getText(), "me");
 		}
 		if (e.getSource() == Good)
 		{
 			Email.setBackground(Color.GREEN);
-			sendSpam(Email.getText(), "I'm Sorry. I hate you. Face LIFE", "This is the truth: U Suck");
-			// PhoneNumber.setBackground(Color.GREEN);
-			// sendTextMessage(PhoneNumber.getText(), "me");
+			 sendSpam(Email.getText(),"I'm Sorry. I hate you. Face LIFE", "This is the truth: U Suck");
+			 //PhoneNumber.setBackground(Color.GREEN);
+				// sendTextMessage(PhoneNumber.getText(), "me");
 		}
 	}
 }
