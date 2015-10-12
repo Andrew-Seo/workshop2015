@@ -1,0 +1,8 @@
+package Photo_Project;
+
+import javax.swing.JPanel;
+
+public class Image_Panel extends JPanel
+{
+	BufferedImage big;
+}

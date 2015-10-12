@@ -1,0 +1,16 @@
+package Photo_Project;
+
+import javax.swing.JFrame;
+
+public class Photobook
+{
+	public static void main(String[] args)
+	{
+		JFrame spen = new JFrame();
+	}
+
+	PhotoBook()
+	{
+	}
+
+}

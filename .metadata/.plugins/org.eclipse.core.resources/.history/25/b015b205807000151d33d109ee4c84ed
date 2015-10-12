@@ -1,0 +1,25 @@
+package Photo_Project;
+
+import javax.swing.JFrame;
+
+public class Photobook
+{
+	JFrame spen;
+	Image_Panel impan;
+
+	public static void main(String[] args)
+	{
+		Photobook j = new Photobook();
+	}
+
+	public Photobook()
+	{
+		spen = new JFrame();
+		spen.setVisible(true);
+		spen.setSize(500, 500);
+		spen.EXIT_ON_CLOSE;
+		impan = new Image_Panel("Chinese.jpg");
+		spen.add(impan);
+
+	}
+}

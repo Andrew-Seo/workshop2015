@@ -1,0 +1,35 @@
+package Photo_Project;
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+
+public class Image_Panel extends JPanel
+{
+	BufferedImage big;
+	
+	public void paint(Graphics mlg)
+	{
+		super.paint(mlg);
+		mlg.drawImage(big,50,50, 300,300,null);
+	}
+
+	public Image_Panel(String FileName)
+	{
+
+		try
+		{
+			big = ImageIO.read(this.getClass().getResourceAsStream(FileName));
+		} catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+	
+}
