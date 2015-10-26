@@ -1,0 +1,41 @@
+package Photo_Project;
+
+import javax.swing.JFrame;
+
+import org.jointheleague.graphical.robot.Robot;
+
+public class Face
+{
+	JFrame spen;
+
+	public static void main(String[] args)
+	{
+		Face fa = new Face();
+
+	}
+
+	Face()
+	{
+		spen = new JFrame();
+		spen.setDefaultCloseOperation(spen.EXIT_ON_CLOSE);
+		Robot Anderz = new Robot();
+		Anderz.setPenWidth(5);
+		s.penDown();
+		s.setSpeed(10);
+		head(Anderz);
+
+		spen.setSize(700, 700);
+	}
+
+	void head(Robot s)
+	{
+
+		s.setX(50);
+		s.setY(50);
+		for (int i = 0; i < 360; i++)
+		{
+			s.turn(1);
+			s.move(1);
+		}
+	}
+}

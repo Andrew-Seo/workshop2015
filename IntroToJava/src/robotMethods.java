@@ -1,7 +1,12 @@
+import javax.swing.JFrame;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class robotMethods
 {
+
+	JFrame spen;
+
 	public static void main(String[] args)
 	{
 		robotMethods Andrew = new robotMethods();
