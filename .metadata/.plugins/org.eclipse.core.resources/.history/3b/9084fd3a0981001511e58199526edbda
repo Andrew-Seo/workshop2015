@@ -1,0 +1,72 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class DungeonsDragons implements ActionListener
+{
+	JFrame peh;
+	JPanel panel;
+	JButton Button1;
+	JButton Button2;
+	JButton Button3;
+	JButton Button4;
+	JButton Button5;
+	JButton Button6;
+	JButton ButtonClear;
+	JLabel CurrentRoll;
+	JLabel Total;
+
+	public static void main(String[] args)
+	{
+		DungeonsDragons flappy = new DungeonsDragons();
+	}
+
+	DungeonsDragons()
+	{
+		peh = new JFrame();
+		peh.setDefaultCloseOperation(peh.EXIT_ON_CLOSE);
+		peh.setVisible(true);
+		panel = new JPanel();
+		peh.add(panel);
+		Button1 = new JButton("Dice: 4");
+		panel.add(Button1);
+		Button2 = new JButton("Dice: 6");
+		panel.add(Button2);
+		Button3 = new JButton("Dice: 8");
+		panel.add(Button3);
+		Button4 = new JButton("Dice: 10");
+		panel.add(Button4);
+		Button5 = new JButton("Dice: 12");
+		panel.add(Button5);
+		Button6 = new JButton("Dice: 20");
+		panel.add(Button6);
+		ButtonClear = new JButton("Clear");
+		panel.add(ButtonClear);
+		CurrentRoll = new JLabel("CurrentRoll");
+		panel.add(CurrentRoll);
+		Total = new JLabel("Total");
+		panel.add(Total);
+
+		Button1.addActionListener(this);
+		Button2.addActionListener(this);
+		Button3.addActionListener(this);
+		Button4.addActionListener(this);
+		Button5.addActionListener(this);
+		Button6.addActionListener(this);
+		ButtonClear.addActionListener(this);
+
+		peh.setSize(700, 700);
+		peh.pack();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		// TODO Auto-generated method stub
+
+	}
+}

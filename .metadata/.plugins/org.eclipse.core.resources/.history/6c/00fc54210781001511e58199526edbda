@@ -1,0 +1,40 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class DungeonsDragons
+{
+	JFrame peh;
+	JPanel panel;
+	JButton Button1;
+	JButton Button2;
+	JButton Button3;
+	JButton Button4;
+	JButton Button5;
+	JButton Button6;
+	JButton ButtonClear;
+	JButton Previous;
+	JButton Random;
+
+	public static void main(String[] args)
+	{
+		DungeonsDragons flappy = new DungeonsDragons();
+	}
+
+	DungeonsDragons()
+	{
+		peh = new JFrame();
+		peh.setDefaultCloseOperation(peh.EXIT_ON_CLOSE);
+		peh.setVisible(true);
+		panel = new JPanel();
+		peh.add(panel);
+		Button1 = new JButton();
+		panel.add(Button1);
+		Button2 = new JButton();
+		panel.add(Button2);
+		Button3 = new JButton();
+		panel.add(Button3);
+
+		peh.setSize(700, 700);
+	}
+}
