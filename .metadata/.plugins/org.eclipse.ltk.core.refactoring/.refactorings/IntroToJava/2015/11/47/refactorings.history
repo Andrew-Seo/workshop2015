@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;y&apos; in &apos;Whackamole&apos; to &apos;roundsPlayed&apos;&#x0A;- Original project: &apos;IntroToJava&apos;&#x0A;- Original element: &apos;Whackamole.y&apos;&#x0A;- Renamed element: &apos;Whackamole.roundsPlayed&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="true" description="Rename field &apos;y&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;{Whackamole.java[Whackamole^y" name="roundsPlayed" references="true" setter="false" stamp="1447640939181" textual="false" version="1.0"/>
+</session>
