@@ -1,0 +1,60 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Level_1_Exam implements ActionListener
+{
+	JFrame frame;
+	JPanel panel;
+	JButton butt1;
+	JButton butt2;
+	JButton butt3;
+	JButton butt4;
+
+	public static void main(String[] args)
+	{
+
+	}
+
+	void speak(String words)
+	{
+		try
+		{
+			Runtime.getRuntime().exec("say" + words);
+		} catch (IOException e)
+		{
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
+	Level_1_Exam()
+	{
+		frame = new JFrame();
+		panel = new JPanel();
+		frame.add(panel);
+		butt1 = new JButton();
+		panel.add(butt1);
+		butt2 = new JButton();
+		panel.add(butt2);
+		butt3 = new JButton();
+		panel.add(butt3);
+		butt4 = new JButton();
+		panel.add(butt4);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		// TODO Auto-generated method stub
+		if (e.getSource() == butt1)
+		{
+
+		}
+
+	}
+}
