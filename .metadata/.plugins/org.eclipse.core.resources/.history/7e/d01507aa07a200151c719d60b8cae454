@@ -1,0 +1,25 @@
+package Level_2;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Atari_Breakout
+{
+	JFrame frame;
+	JPanel panel;
+	
+ public static void main(String[] args)
+{
+	 Atari_Breakout Window= new Atari_Breakout();
+}
+ Atari_Breakout(){
+	 
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+
+		panel = new JPanel();
+		frame.add(panel);
+		
+ }
+}

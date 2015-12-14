@@ -1,0 +1,13 @@
+package Level_2;
+
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class Animation_Panel extends JPanel
+{
+	public void paint(Graphics g)
+	{
+
+	}
+}

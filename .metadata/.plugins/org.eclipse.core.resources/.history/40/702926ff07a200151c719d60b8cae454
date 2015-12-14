@@ -1,0 +1,9 @@
+package Level_2;
+
+public class Obstacles
+{
+	public static void main(String[] args)
+	{
+
+	}
+}

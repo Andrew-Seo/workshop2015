@@ -1,0 +1,24 @@
+package Level_2;
+
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class Animation_Panel extends JPanel
+{
+	Pinger pinger;
+	Blocks blocks;
+
+	Animation_Panel()
+	{
+		pinger = new Pinger(800, 900, 400, 25);
+		blocks = new Blocks(400, 900, 100, 50);
+
+	}
+
+	public void paint(Graphics g)
+	{
+		pinger.paint(g);
+		blocks.paint(g);
+	}
+}
