@@ -1,0 +1,43 @@
+package Level_2;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.Timer;
+
+public class Atari_Breakout implements ActionListener
+{
+	JFrame frame;
+	Animation_Panel panel;
+	Timer timer;
+
+	public static void main(String[] args)
+	{
+		Atari_Breakout Window = new Atari_Breakout();
+
+	}
+
+	Atari_Breakout()
+	{
+
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+
+		panel = new Animation_Panel();
+		frame.add(panel);
+
+		timer = new Timer(1000 / 60, this);
+		timer.start();
+
+		frame.setSize(2000, 1000);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		// TODO Auto-generated method stub
+		System.out.print("hi");
+	}
+}

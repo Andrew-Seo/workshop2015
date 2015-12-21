@@ -1,0 +1,68 @@
+package Level_2;
+
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JPanel;
+
+public class Animation_Panel extends JPanel implements ActionListener
+{
+	Pinger pinger;
+	Blocks blocks;
+	Ball ball;
+
+	Animation_Panel()
+	{
+		pinger = new Pinger(800, 900, 400, 25);
+		blocks = new Blocks(925, 450, 125, 50);
+		ball = new Ball(975, 750, 50, 50);
+
+	}
+
+	public void paint(Graphics g)
+	{
+		pinger.paint(g);
+		blocks.paint(g);
+		ball.paint(g);
+	}
+
+	public void update()
+	{
+		ball.update();
+		pinger.update();
+	}
+
+	public void movePinger(KeyEvent e)
+	{
+		if (e.getKeyCode() == KeyEvent.VK_LEFT)
+		{
+			moveLeft();
+		}
+
+		else if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+		{
+			moveRight();
+		}
+	}
+
+	void moveLeft()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	void moveRight()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		// TODO Auto-generated method stub
+
+	}
+}
