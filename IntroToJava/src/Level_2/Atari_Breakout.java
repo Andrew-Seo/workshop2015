@@ -13,6 +13,8 @@ public class Atari_Breakout implements ActionListener, KeyListener
 	JFrame frame;
 	Animation_Panel panel;
 	Timer timer;
+	public final int panelWidth = 1900;
+	public final int panelHeight = 1000;
 
 	public static void main(String[] args)
 	{
@@ -35,7 +37,7 @@ public class Atari_Breakout implements ActionListener, KeyListener
 		timer = new Timer(1000 / 60, this);
 		timer.start();
 
-		frame.setSize(1900, 1000);
+		frame.setSize(panelWidth, panelHeight);
 	}
 
 	@Override

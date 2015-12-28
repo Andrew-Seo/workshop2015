@@ -2,6 +2,7 @@ package Level_2;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public class Pinger
 {
@@ -9,19 +10,25 @@ public class Pinger
 	private int y;
 	private int height;
 	private int width;
+	private Rectangle collisionbox;
 
 	public Pinger(int a, int b, int c, int d)
 	{
 		x = a;
 		y = b;
-		height = c;
-		width = d;
-
+		width = c;
+		height = d;
+		collisionbox = new Rectangle(a, b, c, d);
 	}
 
 	public void update()
 	{
+		collisionbox.setBounds(x, y, width, height);
+	}
 
+	public Rectangle getCollisionBox()
+	{
+		return collisionbox;
 	}
 
 	public void moveLeft()
@@ -31,9 +38,9 @@ public class Pinger
 		{
 			x = 0 + width;
 		}
-		if (x >= 2000 - width)
+		if (x >= 1501 - width)
 		{
-			x = 2000 - width;
+			x = 1501 - width;
 		}
 	}
 
@@ -45,7 +52,7 @@ public class Pinger
 	public void paint(Graphics g)
 	{
 		g.setColor(Color.GRAY);
-		g.fillRect(x, y, height, width);
+		g.fillRect(x, y, width, height);
 
 	}
 }
