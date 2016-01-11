@@ -6,10 +6,10 @@ import java.awt.Rectangle;
 
 public class Pinger
 {
-	private int x;
-	private int y;
-	private int height;
-	private int width;
+	public int x;
+	public int y;
+	public int height;
+	public int width;
 	private Rectangle collisionbox;
 
 	public Pinger(int a, int b, int c, int d)
@@ -34,14 +34,7 @@ public class Pinger
 	public void moveLeft()
 	{
 		x = x - 50;
-		if (x <= 0 + width)
-		{
-			x = 0 + width;
-		}
-		if (x >= 1501 - width)
-		{
-			x = 1501 - width;
-		}
+
 	}
 
 	public void moveRight()

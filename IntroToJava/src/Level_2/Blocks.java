@@ -5,17 +5,20 @@ import java.awt.Graphics;
 
 public class Blocks
 {
-	private int x;
-	private int y;
-	private int height;
-	private int width;
+	public int x;
+	public int y;
+	public int height;
+	public int width;
+	static Blocks[] Blox = new Blocks[86];
+	public static int Blockamount;
 
 	public Blocks(int a, int b, int c, int d)
 	{
 		x = a;
 		y = b;
-		height = c;
-		width = d;
+		width = c;
+		height = d;
+		Blockamount++;
 	}
 
 	public void paint(Graphics g)

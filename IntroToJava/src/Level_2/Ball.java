@@ -11,6 +11,7 @@ public class Ball
 	private int y;
 	private int height;
 	private int width;
+	public int direction = 2;
 	private Rectangle collisionbox;
 
 	public Ball(int a, int b, int c, int d)
@@ -24,15 +25,58 @@ public class Ball
 
 	public void update()
 	{
-		x = x + 1;
-		y = y + 1;
-
+		moveBall();
 		collisionbox.setBounds(x, y, width, height);
 	}
 
 	public Rectangle getCollisionBox()
 	{
 		return collisionbox;
+	}
+
+	public void changeDirection()
+	{
+		if (direction == 0)
+		{
+			direction = 1;
+			return;
+		} else if (direction == 1)
+		{
+			direction = 2;
+			return;
+		} else if (direction == 2)
+		{
+			direction = 3;
+			return;
+		} else if (direction == 3)
+		{
+			direction = 0;
+			return;
+		}
+	}
+
+	public void moveBall()
+	{
+		if (direction == 0)
+		{
+			x = x + 1;
+			y = y + 1;
+		}
+		if (direction == 1)
+		{
+			x = x - 1;
+			y = y + 1;
+		}
+		if (direction == 2)
+		{
+			x = x - 1;
+			y = y - 1;
+		}
+		if (direction == 3)
+		{
+			x = x + 1;
+			y = y - 1;
+		}
 	}
 
 	public void paint(Graphics g)

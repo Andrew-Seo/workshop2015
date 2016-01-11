@@ -1,0 +1,27 @@
+package Level_2;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class Blocks
+{
+	private int x;
+	private int y;
+	private int height;
+	private int width;
+
+	public Blocks(int a, int b, int c, int d)
+	{
+		x = a;
+		y = b;
+		height = c;
+		width = d;
+	}
+
+	public void paint(Graphics g)
+	{
+		g.setColor(Color.BLUE);
+		g.fillRect(925, 450, 125, 50);
+
+	}
+}

@@ -1,0 +1,93 @@
+package Level_2;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
+public class Ball
+{
+
+	private int x;
+	private int y;
+	private int height;
+	private int width;
+	public int direction;
+	private Rectangle collisionbox;
+
+	public Ball(int a, int b, int c, int d)
+	{
+		x = a;
+		y = b;
+		width = c;
+		height = d;
+		collisionbox = new Rectangle(a, b, c, d);
+	}
+
+	public void update()
+	{
+		x = x + 1;
+		y = y + 1;
+		moveBall();
+		changeDirection();
+
+		collisionbox.setBounds(x, y, width, height);
+	}
+
+	public Rectangle getCollisionBox()
+	{
+		return collisionbox;
+	}
+
+	public void changeDirection()
+	{
+		if (direction == 0)
+		{
+			direction = 1;
+			return;
+		} else if (direction == 1)
+		{
+			direction = 2;
+			return;
+		} else if (direction == 2)
+		{
+			direction = 3;
+			return;
+		} else if (direction == 3)
+		{
+			direction = 0;
+			return;
+		}
+	}
+
+	public void moveBall()
+	{
+		System.out.print(direction);
+		if (direction == 0)
+		{
+			x = x + 1;
+			y = y + 1;
+		}
+		if (direction == 1)
+		{
+			x = x - 1;
+			y = y - 1;
+		}
+		if (direction == 2)
+		{
+			x = x - 1;
+			y = y + 1;
+		}
+		if (direction == 3)
+		{
+			x = x + 1;
+			y = y - 1;
+		}
+	}
+
+	public void paint(Graphics g)
+	{
+		g.setColor(Color.GRAY);
+		g.fillOval(x, y, height, width);
+
+	}
+}

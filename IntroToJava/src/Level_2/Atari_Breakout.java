@@ -34,10 +34,17 @@ public class Atari_Breakout implements ActionListener, KeyListener
 		panel = new Animation_Panel();
 		frame.add(panel);
 
-		timer = new Timer(1000 / 60, this);
+		timer = new Timer(1000 / 120, this);
 		timer.start();
 
 		frame.setSize(panelWidth, panelHeight);
+
+		// Create Blox
+		Blocks.Blox[0] = new Blocks(0, 0, 2400, 5);
+		Blocks.Blox[1] = new Blocks(0, 1000, 1900, 5);
+		Blocks.Blox[2] = new Blocks(1895, 0, 5, 1000);
+		Blocks.Blox[3] = new Blocks(0, 0, 5, 1000);
+
 	}
 
 	@Override

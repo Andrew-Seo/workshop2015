@@ -22,8 +22,13 @@ public class Animation_Panel extends JPanel
 
 	public void paint(Graphics g)
 	{
+		for (int i = 0; i < Blocks.Blockamount - 1; i++)
+		{
+			g.fillRect(Blocks.Blox[i].x, Blocks.Blox[i].y, Blocks.Blox[i].width, Blocks.Blox[i].height);
+
+		}
 		pinger.paint(g);
-		blocks.paint(g);
+		// blocks.paint(g);
 		ball.paint(g);
 	}
 
@@ -31,15 +36,22 @@ public class Animation_Panel extends JPanel
 	{
 		Rectangle r1 = pinger.getCollisionBox();
 		Rectangle r2 = ball.getCollisionBox();
+		if (r1.intersects(r2))
+		{
+			ball.changeDirection();
+		}
 		// System.out.println(r2.getWidth());
 		// System.out.println(r1.getWidth());
 		// System.out.println(r2.getHeight());
 		// System.out.println(r1.getHeight());
-
-		if (r1.intersects(r2))
+		for (int i = 0; i < Blocks.Blockamount - 1; i++)
 		{
-			System.out.print("hi");
+			if (r2.intersects(Blocks.Blox[i].x, Blocks.Blox[i].y, Blocks.Blox[i].width, Blocks.Blox[i].height))
+			{
+				ball.changeDirection();
+			}
 		}
+
 	}
 
 	public void update()
@@ -53,12 +65,16 @@ public class Animation_Panel extends JPanel
 	{
 		if (e.getKeyCode() == KeyEvent.VK_LEFT)
 		{
-			pinger.moveLeft();
+			if (pinger.x > 100)
+			{
+				pinger.moveLeft();
+			}
 		}
 
 		else if (e.getKeyCode() == KeyEvent.VK_RIGHT)
 		{
-			pinger.moveRight();
+			if (pinger.x < 1400)
+				pinger.moveRight();
 		}
 	}
 
