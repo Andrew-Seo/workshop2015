@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.Timer;
@@ -13,6 +14,7 @@ public class Atari_Breakout implements ActionListener, KeyListener
 	JFrame frame;
 	Animation_Panel panel;
 	Timer timer;
+
 	public final int panelWidth = 1900;
 	public final int panelHeight = 1000;
 
@@ -34,16 +36,35 @@ public class Atari_Breakout implements ActionListener, KeyListener
 		panel = new Animation_Panel();
 		frame.add(panel);
 
-		timer = new Timer(1000 / 120, this);
+		timer = new Timer(1000 / 240, this);
 		timer.start();
 
 		frame.setSize(panelWidth, panelHeight);
 
+		int currentX = 0;
+		int currentY = 400;
+
 		// Create Blox
-		Blocks.Blox[0] = new Blocks(0, 0, 2400, 5);
-		Blocks.Blox[1] = new Blocks(0, 1000, 1900, 5);
-		Blocks.Blox[2] = new Blocks(1895, 0, 5, 1000);
-		Blocks.Blox[3] = new Blocks(0, 0, 5, 1000);
+		Blocks.Blox[0] = new Blocks(0, 0, 2400, 5, false);
+		Blocks.Blox[1] = new Blocks(1895, 0, 5, 1000, false);
+		Blocks.Blox[2] = new Blocks(0, 0, 5, 1000, false);
+		for (int i = 0; i < 76; i++)
+		{
+			Random random = new Random();
+			int rWidth = random.nextInt(70) + 60;
+
+			Blocks.Blox[i + 3] = new Blocks(currentX, currentY, rWidth, 50, true);
+			currentX = currentX + rWidth + 5;
+			if (currentX > 1850)
+			{
+				currentY = currentY + 60;
+				if (76 - i < 12)
+				{
+					break;
+				}
+				currentX = 0;
+			}
+		}
 
 	}
 

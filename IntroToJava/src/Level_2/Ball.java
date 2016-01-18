@@ -7,8 +7,8 @@ import java.awt.Rectangle;
 public class Ball
 {
 
-	private int x;
-	private int y;
+	public int x;
+	public int y;
 	private int height;
 	private int width;
 	public int direction = 2;

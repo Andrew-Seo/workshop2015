@@ -9,16 +9,19 @@ public class Blocks
 	public int y;
 	public int height;
 	public int width;
-	static Blocks[] Blox = new Blocks[86];
+	public boolean breakable;
+	static Blocks[] Blox = new Blocks[85];
 	public static int Blockamount;
 
-	public Blocks(int a, int b, int c, int d)
+	public Blocks(int a, int b, int c, int d, boolean sup)
 	{
 		x = a;
 		y = b;
 		width = c;
 		height = d;
 		Blockamount++;
+		breakable = sup;
+
 	}
 
 	public void paint(Graphics g)

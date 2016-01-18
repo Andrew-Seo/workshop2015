@@ -11,12 +11,14 @@ public class Animation_Panel extends JPanel
 	Pinger pinger;
 	Blocks blocks;
 	Ball ball;
+	int spawnX = 975;
+	int spawnY = 750;
 
 	Animation_Panel()
 	{
 		pinger = new Pinger(800, 900, 400, 15);
-		ball = new Ball(975, 750, 20, 20);
-		blocks = new Blocks(925, 450, 125, 50);
+		ball = new Ball(spawnX, spawnY, 20, 20);
+		blocks = new Blocks(925, 450, 125, 50, false);
 
 	}
 
@@ -49,6 +51,10 @@ public class Animation_Panel extends JPanel
 			if (r2.intersects(Blocks.Blox[i].x, Blocks.Blox[i].y, Blocks.Blox[i].width, Blocks.Blox[i].height))
 			{
 				ball.changeDirection();
+				if (blocks.Blox[i].breakable)
+				{
+					blocks.Blox[i].y = -100;
+				}
 			}
 		}
 
@@ -59,6 +65,11 @@ public class Animation_Panel extends JPanel
 		ball.update();
 		pinger.update();
 		checkcollisionbox();
+		if (ball.y > 1000)
+		{
+			ball.x = spawnX;
+			ball.y = spawnY;
+		}
 	}
 
 	public void movePinger(KeyEvent e)
